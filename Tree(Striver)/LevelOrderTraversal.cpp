@@ -48,14 +48,18 @@ vector< vector<int> > LevelOrderTraversal(Node* current){
     if(current==nullptr){
         return res;
     }
+
     queue<Node*> ElementQueue;
     ElementQueue.push(current);
+
     while(!ElementQueue.empty()){
         int size = ElementQueue.size();
         vector<int> levelElement;
         for(int i=0; i<size; i++){
+
             Node* tmp = ElementQueue.front();
             ElementQueue.pop();
+            
             if(tmp->left!=NULL){
                 ElementQueue.push(tmp->left);
             }
